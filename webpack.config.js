@@ -5,10 +5,10 @@ module.exports = {
         path: __dirname + "/dist"
     },
 
-    devtool: "source-map",
+    // devtool: "source-map",
 
     resolve: {
-        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+        extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
 
     module: {
@@ -16,11 +16,11 @@ module.exports = {
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
         ],
 
-        preLoaders: [
-            { test: /\.js$/, loader: "source-map-loader" }
-        ]
+        // preLoaders: [
+        //     { test: /\.js$/, loader: "source-map-loader" }
+        // ]
     },
-externals: {
+    externals: {
         "react": "React",
         "react-dom": "ReactDOM"
     },
