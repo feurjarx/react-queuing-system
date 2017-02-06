@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import {Hello} from "./components/hello";
+import SyntheticEvent = React.SyntheticEvent;
 
 export class App extends React.Component<any, any> {
 
@@ -8,6 +9,10 @@ export class App extends React.Component<any, any> {
 
     constructor() {
         super();
+
+        this.state = {
+            labelText: 'Label for text input'
+        };
 
         this.helloList = [{
             title: 'Jetbrains is best IDE',
@@ -18,17 +23,31 @@ export class App extends React.Component<any, any> {
         }];
     }
 
+    handleInputChange(event: SyntheticEvent<HTMLInputElement>) {
+        this.setState({
+            labelText: event.currentTarget.value
+        });
+    }
+
     render() {
+
         return (
             <div>
+
+                <label>{ this.state.labelText }
+                    <input type="text" onChange={ this.handleInputChange.bind(this) }/>
+                </label>
+
                 {
-                    this.helloList.map(data => (
+                    this.helloList.map((data, idx) => (
                         <Hello
+                            key={ idx }
                             title={ data['title']}
                             body={ data['body'] }
                         />
                     ))
                 }
+
             </div>
         );
     }
