@@ -4,6 +4,7 @@
 import * as React from "react";
 import StatelessComponent = React.StatelessComponent;
 
+
 export interface EventsMonitorProps {
     eventType: string;
 }
@@ -43,8 +44,8 @@ export class EventsMonitorComponent extends React.Component<EventsMonitorProps, 
             <div>
                 <h1>Events history:</h1>
                 {
-                    this.state.logs.map((eventType: string) => (
-                        <EventItem eventType={ eventType }/>
+                    this.state.logs.map((eventType: string, idx: number) => (
+                        <EventItem key={idx} eventType={ eventType }/>
                     ))
                 }
             </div>
