@@ -17,17 +17,15 @@ export class Lesson14Component extends React.Component<any, Lesson14ComponentSta
     }
 
     getData() {
-        debugger
+
         axios
             .get('/data')
             .then((response: AxiosResponse) => {
-                debugger
                 return this.setState({
                     data: response.data
                 });
             })
             .catch((err: AxiosError) => {
-                debugger
             });
     }
 
@@ -39,7 +37,7 @@ export class Lesson14Component extends React.Component<any, Lesson14ComponentSta
         return (
             <div>
                 { this.state.data.map(() => {
-                    debugger
+
                 })}
             </div>
         )

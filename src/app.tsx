@@ -4,6 +4,7 @@ import * as ReactDOM from "react-dom";
 import {Lesson9Component} from "./components/lesson9.component";
 import {Lesson15Component} from "./components/lesson15.component";
 import {Lesson14Component} from "./components/lesson14.component";
+import {Lesson13Component} from "./components/lesson13.component";
 
 import Props = React.Props;
 import ChangeEvent = React.ChangeEvent;
@@ -11,9 +12,10 @@ import Component = React.Component;
 import JSXElement = JSX.JSXElement;
 import StatelessComponent = React.StatelessComponent;
 
-const root = document.getElementById('root');
+export const root = document.getElementById('root');
 const lessons: {[key: string]: JSXElement} = {
     lesson9: <Lesson9Component />,
+    lesson13: <Lesson13Component />,
     lesson14: <Lesson14Component />,
     lesson15: <Lesson15Component />,
 };
@@ -41,7 +43,10 @@ const SwitchOption: StatelessComponent<SwitchOptionProps> = (props) => (
     </span>
 );
 
+const LOCALSTORAGE_LESSON_KEY = 'lesson'
+
 export class App extends React.Component<any, AppStates> {
+
     constructor() {
         super();
 
@@ -50,14 +55,20 @@ export class App extends React.Component<any, AppStates> {
             activeLessonName: null
         };
 
-        this.componentRemount = this.componentRemount.bind(this);
+        this.selectHandle = this.selectHandle.bind(this);
     }
 
     componentWillMount() {
-        this.mountComponent('lesson9');
+
+        let lessonKey = localStorage.getItem(LOCALSTORAGE_LESSON_KEY);
+        if (!lessonKey) {
+            lessonKey = 'lesson9';
+        }
+
+        this.mountComponent(lessonKey);
     }
 
-    componentRemount(event: ChangeEvent<any>) {
+    selectHandle(event: ChangeEvent<any>) {
         this.unmount();
         const selectedLessonName = event.target['value'];
         this.mountComponent(selectedLessonName);
@@ -71,6 +82,8 @@ export class App extends React.Component<any, AppStates> {
             activeLesson,
             activeLessonName
         });
+
+        localStorage.setItem(LOCALSTORAGE_LESSON_KEY, activeLessonName);
     }
 
     unmount() {
@@ -80,7 +93,7 @@ export class App extends React.Component<any, AppStates> {
     render() {
         return (
 
-            <div onChange={ this.componentRemount }>
+            <div onChange={ this.selectHandle }>
 
                 {
                     Object.keys(lessons).map((lessonName: string) => (
