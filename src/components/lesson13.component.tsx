@@ -25,8 +25,11 @@ export class Lesson13Component extends React.Component<Lesson13Props, Lesson13St
         };*/
     }
 
+    shouldComponentUpdate(nextProps: Lesson13Props, nextStates: Lesson13States) {
+        return !(nextProps.counter % 5);
+    }
     componentWillReceiveProps(nextProps: Lesson13Props) {
-        debugger
+        console.log(nextProps);
     }
 
     clickHandle() {
@@ -44,5 +47,10 @@ export class Lesson13Component extends React.Component<Lesson13Props, Lesson13St
                 {/*{ this.state.counter }*/}
             </button>
         )
+    }
+
+    componentDidUpdate() {
+        console.log('componentDidUpdate');
+        console.log(arguments);
     }
 }
