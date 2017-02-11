@@ -32,6 +32,7 @@ export class Lesson18 extends React.Component<any, Lesson18States> {
         return (
             <PersonList>
                 <div>One</div>
+                <div>One</div>
             </PersonList>
         )
     }
@@ -44,6 +45,7 @@ class PersonList extends React.Component<Props<any>, any> {
 
     render() {
 
+        debugger
         // const items = this.props.children.map(jsx => jsx); // BAD
         const items = React.Children.map(this.props.children, jsx => jsx); // GOOD
 
