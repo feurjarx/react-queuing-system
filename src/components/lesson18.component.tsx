@@ -13,19 +13,6 @@ export interface Lesson18States {
 export class Lesson18 extends React.Component<any, Lesson18States> {
     constructor() {
         super();
-
-        /*this.state = {
-            persons: [{
-                id: 1,
-                name: 'Nikolay'
-            },{
-                id: 2,
-                name: 'Ivan'
-            },{
-                id: 3,
-                name: 'Anna'
-            }]
-        }*/
     }
 
     render() {
