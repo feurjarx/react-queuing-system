@@ -14,7 +14,7 @@ export class Lesson18 extends React.Component<any, Lesson18States> {
     constructor() {
         super();
 
-        this.state = {
+        /*this.state = {
             persons: [{
                 id: 1,
                 name: 'Nikolay'
@@ -25,7 +25,7 @@ export class Lesson18 extends React.Component<any, Lesson18States> {
                 id: 3,
                 name: 'Anna'
             }]
-        }
+        }*/
     }
 
     render() {
