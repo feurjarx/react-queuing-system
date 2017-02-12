@@ -9,6 +9,7 @@ import {Lesson16Component} from "./components/lesson16.component";
 import {Lesson18} from "../dist/components/lesson18.component";
 import {Lesson19} from "../dist/components/lesson19.component";
 import {Lesson20} from "./components/lesson20";
+import {Lesson20Mod} from "./components/lesson20mod";
 
 import Props = React.Props;
 import ChangeEvent = React.ChangeEvent;
@@ -25,7 +26,8 @@ const lessons: {[key: string]: JSXElement} = {
     lesson16: <Lesson16Component />,
     lesson18: <Lesson18 />,
     lesson19: <Lesson19 />,
-    lesson20: <Lesson20 />
+    lesson20: <Lesson20 />,
+    lesson20mod: <Lesson20Mod />
 };
 
 export interface AppStates {
