@@ -1,5 +1,7 @@
 module.exports = {
-    entry: "./src/main.ts",
+    entry: [
+        "./src/main.ts"
+    ],
     output: {
         filename: "bundle.js",
         path: __dirname + "/dist"

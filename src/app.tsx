@@ -2,14 +2,15 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import {Lesson9Component} from "./components/lesson9.component";
-import {Lesson10} from "../dist/components/lesson10";
+import {Lesson10} from "./components/lesson10";
 import {Lesson13Component} from "./components/lesson13.component";
 import {Lesson14Component} from "./components/lesson14.component";
 import {Lesson16Component} from "./components/lesson16.component";
-import {Lesson18} from "../dist/components/lesson18.component";
-import {Lesson19} from "../dist/components/lesson19.component";
+import {Lesson18} from "./components/lesson18.component";
+import {Lesson19} from "./components/lesson19.component";
 import {Lesson20} from "./components/lesson20";
 import {Lesson20Mod} from "./components/lesson20mod";
+import {ReduxDemo} from "./components/redux-demo";
 
 import Props = React.Props;
 import ChangeEvent = React.ChangeEvent;
@@ -27,7 +28,8 @@ const lessons: {[key: string]: JSXElement} = {
     lesson18: <Lesson18 />,
     lesson19: <Lesson19 />,
     lesson20: <Lesson20 />,
-    lesson20mod: <Lesson20Mod />
+    lesson20mod: <Lesson20Mod />,
+    reduxDemo: <ReduxDemo />
 };
 
 export interface AppStates {
