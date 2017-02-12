@@ -2,12 +2,13 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import {Lesson9Component} from "./components/lesson9.component";
+import {Lesson10} from "../dist/components/lesson10";
 import {Lesson13Component} from "./components/lesson13.component";
 import {Lesson14Component} from "./components/lesson14.component";
-import {Lesson15Component} from "./components/lesson15.component";
 import {Lesson16Component} from "./components/lesson16.component";
 import {Lesson18} from "../dist/components/lesson18.component";
 import {Lesson19} from "../dist/components/lesson19.component";
+import {Lesson20} from "./components/lesson20";
 
 import Props = React.Props;
 import ChangeEvent = React.ChangeEvent;
@@ -18,12 +19,13 @@ import StatelessComponent = React.StatelessComponent;
 export const root = document.getElementById('root');
 const lessons: {[key: string]: JSXElement} = {
     lesson9: <Lesson9Component />,
+    lesson10: <Lesson10 />,
     lesson13: <Lesson13Component />,
     lesson14: <Lesson14Component />,
-    lesson15: <Lesson15Component />,
     lesson16: <Lesson16Component />,
     lesson18: <Lesson18 />,
-    lesson19: <Lesson19 />
+    lesson19: <Lesson19 />,
+    lesson20: <Lesson20 />
 };
 
 export interface AppStates {
