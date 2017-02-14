@@ -1,5 +1,5 @@
 import * as React from "react";
-import JSXElement = JSX.JSXElement;
+import JSXElement = JSX.Element;
 
 export class Lesson19 extends React.Component<any, any> {
     constructor() {

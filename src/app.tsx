@@ -15,7 +15,7 @@ import {ReduxDemo} from "./components/redux-demo";
 import Props = React.Props;
 import ChangeEvent = React.ChangeEvent;
 import Component = React.Component;
-import JSXElement = JSX.JSXElement;
+import JSXElement = JSX.Element;
 import StatelessComponent = React.StatelessComponent;
 
 export const root = document.getElementById('root');
@@ -33,7 +33,7 @@ const lessons: {[key: string]: JSXElement} = {
 };
 
 export interface AppStates {
-    activeLesson: JSXElement;
+    activeLesson: JSX.Element;
     activeLessonName: string;
 }
 
